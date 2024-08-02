@@ -1,5 +1,4 @@
-import express from 'express'
-
+import express from 'express';
 const servidor = express()
 
 servidor.use(express.json())
@@ -19,6 +18,25 @@ servidor.get('/calcula/soma/:n1/:n2', (req,resp) => {
         soma: soma
     })
 })
+
+servidor.get('calculadora/multiplica/:n1/:n2', (req, resp) => {
+    let numero1 = Number(req.params.numero1)
+    let numero2 = Number(req.params.numero2)
+    let multiplica = numero1 * numero2
+
+    resp.send({
+
+        numerosDigitados: {
+            PrimeiroNumero: numero1,
+            SegundoNumero: numero2 
+        },
+        multiplica: multiplica
+    })
+})
+
+
+
+
 
 servidor.listen(
     5001,
