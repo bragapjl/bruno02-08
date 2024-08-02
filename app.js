@@ -20,3 +20,6 @@ servidor.get('/calcula/soma/:n1/:n2', (req,resp) => {
     })
 })
 
+servidor.listen(
+    5001,
+     () => console.log('API SUBIU BOLADO NA PORTA 5001'))
