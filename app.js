@@ -19,9 +19,9 @@ servidor.get('/calcula/soma/:n1/:n2', (req,resp) => {
     })
 })
 
-servidor.get('calculadora/multiplica/:n1/:n2', (req, resp) => {
-    let numero1 = Number(req.params.numero1)
-    let numero2 = Number(req.params.numero2)
+servidor.get('/calculadora/multiplica/:n1/:n2', (req, resp) => {
+    let numero1 = Number(req.params.n1)
+    let numero2 = Number(req.params.n2)
     let multiplica = numero1 * numero2
 
     resp.send({
@@ -30,7 +30,7 @@ servidor.get('calculadora/multiplica/:n1/:n2', (req, resp) => {
             PrimeiroNumero: numero1,
             SegundoNumero: numero2 
         },
-        multiplica: multiplica
+        final: multiplica
     })
 })
 
